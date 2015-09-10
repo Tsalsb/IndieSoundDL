@@ -11,10 +11,10 @@ connection = urllib.urlopen('URL of site')
 dom =  lxml.html.fromstring(connection.read())
 
 for link in dom.xpath('//a/@href'): # select the url in href for all a tags(links)
-  if 'Keywork 1' or 'Keyword 2' in link:
+  if 'Keywork 1' or 'Keyword 2' in link: # Add keywords such as soundcloud or mixcloud
 		List.append(link)
 		for song in List:
-		  cmds = ["youtube-dl",str(path),str(song)]
+		  cmds = ["youtube-dl",str(path),str(song)] #Pipe command into youtube-DL for download
 		  subprocess.Popen(cmds)
 		
 print "Currently Downloading...",List
