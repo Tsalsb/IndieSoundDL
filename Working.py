@@ -6,18 +6,18 @@ path = "-o ~/Desktop/%(title)s.%(ext)s"
 
 abort = "--abort-on-error"
 
-connection = urllib.urlopen('https://www.mixcloud.com/jonnyvalive/sundaefundae-w-jonny5-6-24-2013-part-1/')
+connection = urllib.urlopen('URL of site')
 
 dom =  lxml.html.fromstring(connection.read())
 
 for link in dom.xpath('//a/@href'): # select the url in href for all a tags(links)
-  if 'soundcloud' or 'SOUNDCLOUD' in link:
+  if 'Keywork 1' or 'Keyword 2' in link:
 		List.append(link)
 		for song in List:
 		  cmds = ["youtube-dl",str(path),str(song)]
 		  subprocess.Popen(cmds)
 		
-print "This is the list of items",List
+print "Currently Downloading...",List
    
 #youtube-dl OPTIONS (#options) URL [URL...]
 
