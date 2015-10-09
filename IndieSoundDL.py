@@ -14,6 +14,11 @@ for link in dom.xpath('//a/@href'): # select the url in href for all a tags(link
   if 'Keywork 1' or 'Keyword 2' in link: # Add keywords such as soundcloud or mixcloud
 		List.append(link)
 		for song in List:
+			#Appears the current release of youtube-dl has broken this pipe
+			#It is fixed in the newest tarball of youtube-dl
+			#Download the newest tarball of youtuble-dl
+			#or wait for the stable release. 
+			#:)
 		  cmds = ["youtube-dl",str(path),str(song)] #Pipe command into youtube-DL for download
 		  subprocess.Popen(cmds)
 		
